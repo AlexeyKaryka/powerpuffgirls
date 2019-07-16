@@ -1,0 +1,28 @@
+.showInfoBlock {
+  flex: 2;
+  padding: 12px;
+  background: whitesmoke;
+  border-radius: 4px;
+  margin-top: 20px;
+
+  @media screen and (min-width: 668px) {
+    margin: 0;
+  }
+
+  .showInfoItemBlock {
+    display: flex;
+    margin: 14px 0 14px;
+  }
+
+  .showInfoHeading {
+    margin: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+  }
+
+  .showInfoItemTitle {
+    margin: 0;
+    margin-right: 10px;
+  }
+}
