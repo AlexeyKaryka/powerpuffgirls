@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchShowWithEpisodesAction } from '../../store/actions';
+import { getShowWithEpisodesAction } from '../../store/actions';
 import AboutShow from './AboutShow';
 
 const mapStateToProps = state => ({
@@ -15,7 +15,7 @@ const mapStateToProps = state => ({
   episodes: state.showEpisodes
 })
 const mapDispatchToProps = dispatch => ({
-  fetchShowWithEpisodes: () => dispatch(fetchShowWithEpisodesAction())
+  fetchShowWithEpisodes: () => dispatch(getShowWithEpisodesAction())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AboutShow);

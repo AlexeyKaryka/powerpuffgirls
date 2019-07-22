@@ -1,21 +1,18 @@
-import * as api from "../api";
-import { powerpuffGirlsShowId } from "../config";
+import { GET_SHOW_WITH_EPISODES, GET_EPISODES_DETAILS } from './actionTypes';
 
-export const GET_SHOW_WITH_EPISODES = 'GET_SHOW_WITH_EPISODES';
-export const GET_EPISODES_DETAILS = 'GET_EPISODES_DETAILS';
-
-export const fetchShowWithEpisodesAction = () => async (dispatch) => {
-  const data = await api.retrieveShowWithEpisodesList(powerpuffGirlsShowId)
-  dispatch({
+export const getShowWithEpisodesAction = () => {
+  return {
     type: GET_SHOW_WITH_EPISODES,
-    payload: data
-  });
+    payload: null
+  }
 }
 
-export const fetchEpisodeDetailsAction = (season, number) => async (dispatch) => {
-  const data = await api.retrieveEpisode(powerpuffGirlsShowId, season, number);
-  dispatch({
+export const getEpisodeDetailsAction = (season, number) => {
+  return {
     type: GET_EPISODES_DETAILS,
-    payload: data
-  });
+    payload: {
+      season,
+      number
+    }
+  }
 }

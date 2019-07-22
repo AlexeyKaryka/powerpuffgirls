@@ -1,4 +1,4 @@
-import { GET_SHOW_WITH_EPISODES, GET_EPISODES_DETAILS } from './actions';
+import { GET_SHOW_WITH_EPISODES_SUCCESS, GET_EPISODES_DETAILS_SUCCESS } from './actionTypes';
 
 const initialState = {
   showName: "",
@@ -18,7 +18,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case GET_SHOW_WITH_EPISODES:
+    case GET_SHOW_WITH_EPISODES_SUCCESS:
       const { name, image, summary, network, status, type, genres, officialSite, rating } = action.payload[0];
       // Just to limit list size in order not to implement paging since it's a bit time consuming
       const episodes = action.payload[1].slice(0, 10);
@@ -37,7 +37,7 @@ export default (state = initialState, action) => {
         showEpisodes: episodes
       }
     
-    case GET_EPISODES_DETAILS:
+    case GET_EPISODES_DETAILS_SUCCESS:
       const { name: episodeName, image: episodeImg, summary: episodeSummary } = action.payload;
 
       return {
